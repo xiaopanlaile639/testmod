@@ -1,9 +1,14 @@
-package testmod
-
 import "fmt"
+import "errors"
 
-func Hi(name string) string{
-	
-	return fmt.Sprintf("Hi,%s, how are you?",name)
+func Hi(name string,lang string ) (string,error){
+
+    switch lang{
+    case "en":
+        return fmt.Sprintf("hi %s!",name),nil
+    case "ch":
+        return fmt.Sprintf("nihao %s!",,name) ,nil
+    default:
+        return "", errors.New("unknown lang")
+    }
 }
-
